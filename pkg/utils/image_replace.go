@@ -1,12 +1,9 @@
 package utils
 
 import (
-	"context"
 	"errors"
 	"fmt"
 	"github.com/blang/semver"
-	doctypes "github.com/docker/docker/api/types"
-	"github.com/docker/docker/client"
 	"github.com/integr8ly/delorean/pkg/types"
 	"io/ioutil"
 	"os"
@@ -61,16 +58,22 @@ var ImageSubs = map[string]*ImageDetails{
 }
 
 func GetRateLimitingOriginImage(repo string, imageTag string) (string, error) {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		fmt.Println("Error getting docker client: ", err)
-		return "", err
-	}
+	//ctx := context.Background()
+	//cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
+	//if err != nil {
+	//	fmt.Println("Error getting docker client: ", err)
+	//	return "", err
+	//}
+	//image := repo + ":" + imageTag
+	//_, err = cli.ImagePull(ctx, image, doctypes.ImagePullOptions{})
+	//if err != nil {
+	//	fmt.Println("Error pulling image: ", err)
+	//	return "", err
+	//}
+	//return image, nil
+
 	image := repo + ":" + imageTag
-	_, err = cli.ImagePull(ctx, image, doctypes.ImagePullOptions{})
-	if err != nil {
-		fmt.Println("Error pulling image: ", err)
+	if err := PullImage(image); err != nil {
 		return "", err
 	}
 	return image, nil

@@ -6,6 +6,7 @@ require (
 	github.com/aws/aws-sdk-go v1.32.5
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/bugsnag/bugsnag-go v1.5.3 // indirect
+	github.com/containers/libpod/v2 v2.0.4
 	github.com/docker/docker v1.4.2-0.20200203170920-46ec8731fbce
 	github.com/ghodss/yaml v1.0.0
 	github.com/go-git/go-git/v5 v5.0.0
@@ -19,17 +20,17 @@ require (
 	github.com/operator-framework/operator-registry v1.9.0
 	github.com/prometheus/client_golang v1.6.0
 	github.com/prometheus/common v0.10.0
-	github.com/spf13/cobra v0.0.6
+	github.com/spf13/cobra v0.0.7
 	github.com/spf13/viper v1.6.2
 	github.com/xanzy/go-gitlab v0.31.0
 	github.com/yvasiyarov/gorelic v0.0.7 // indirect
 	github.com/yvasiyarov/newrelic_platform_go v0.0.0-20160601141957-9c099fbc30e9 // indirect
 	golang.org/x/mod v0.2.0
 	golang.org/x/oauth2 v0.0.0-20190604053449-0f29369cfe45
-	golang.org/x/sync v0.0.0-20190423024810-112230192c58
-	gopkg.in/yaml.v2 v2.2.8
-	k8s.io/api v0.18.0
-	k8s.io/apimachinery v0.18.0
+	golang.org/x/sync v0.0.0-20200317015054-43a5402ce75a
+	gopkg.in/yaml.v2 v2.3.0
+	k8s.io/api v0.18.4
+	k8s.io/apimachinery v0.18.4
 	k8s.io/client-go v8.0.0+incompatible
 	k8s.io/utils v0.0.0-20190801114015-581e00157fb1
 	rsc.io/letsencrypt v0.0.3 // indirect
