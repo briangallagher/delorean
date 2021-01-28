@@ -36,3 +36,4 @@ RUN chmod -R +r /etc/delorean/configurations
 RUN update-ca-trust
 RUN sed -i 's/driver = "overlay"/driver = "vfs"/g' /etc/containers/storage.conf
 RUN podman info 2>1 > /dev/null
+RUN podman system service -t 0 > /dev/null 2>&1 &
