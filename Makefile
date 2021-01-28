@@ -22,7 +22,7 @@ format:
 .PHONY: format
 
 build/cli:
-	GOFLAGS=-mod=vendor go build -tags 'exclude_graphdriver_btrfs btrfs_noversion' -o=$(BUILD_TARGET) .
+	GOFLAGS=-mod=vendor go build -tags 'exclude_graphdriver_btrfs btrfs_noversion containers_image_openpgp' -o=$(BUILD_TARGET) .
 .PHONY: build
 
 .PHONY: code/check
