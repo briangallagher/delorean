@@ -22,7 +22,7 @@ format:
 .PHONY: format
 
 build/cli:
-	GOFLAGS=-mod=vendor go build -o=$(BUILD_TARGET) .
+	GOFLAGS=-mod=vendor go build -tags'containers_image_openpgp exclude_graphdriver_btrfs btrfs_noversion exclude_graphdriver_devicemapper selinux seccomp varlink' -o=$(BUILD_TARGET) .
 .PHONY: build
 
 .PHONY: code/check
