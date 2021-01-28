@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:8
 LABEL maintainer="mnairn@redhat.com"
 
 ENV OPERATOR_SDK_VERSION=v0.15.1 \

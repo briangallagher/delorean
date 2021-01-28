@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"github.com/containers/libpod/v2/pkg/bindings/images"
 	"github.com/containers/libpod/v2/pkg/domain/entities"
-	"os"
-
 	//"github.com/containers/libpod/v2/libpod/define"
 	"github.com/containers/libpod/v2/pkg/bindings"
 	//"github.com/containers/libpod/v2/pkg/bindings/containers"
@@ -17,9 +15,10 @@ import (
 
 func getConnection() (context.Context, error) {
 	// Get Podman socket location
-	sock_dir := os.Getenv("XDG_RUNTIME_DIR")
-	socket := "unix:" + sock_dir + "/podman/podman.sock"
-
+	//sock_dir := os.Getenv("XDG_RUNTIME_DIR")
+	//socket := "unix:" + sock_dir + "/podman/podman.sock"
+	socket := "unix:/run/podman"
+	
 	// Connect to Podman socket
 	return bindings.NewConnection(context.Background(), socket)
 }
