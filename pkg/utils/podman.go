@@ -17,8 +17,8 @@ func getConnection() (context.Context, error) {
 	// Get Podman socket location
 	//sock_dir := os.Getenv("XDG_RUNTIME_DIR")
 	//socket := "unix:" + sock_dir + "/podman/podman.sock"
-	socket := "unix:/run/podman"
-	
+	socket := "unix:/run/podman/podman.sock"
+
 	// Connect to Podman socket
 	return bindings.NewConnection(context.Background(), socket)
 }
